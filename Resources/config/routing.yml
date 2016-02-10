@@ -1,0 +1,4 @@
+# This needs to be defined somewhere to enable the ConditionalRouterLoader
+conditional_routing:
+    resource: .
+    type: conditional
