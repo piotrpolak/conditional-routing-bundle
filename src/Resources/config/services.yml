@@ -1,10 +1,8 @@
 parameters:
     router.class: Piotrpolak\ConditionalRoutingBundle\Router\ConditionalRouter
-    # TODO Inject RouteResolverInterface
 
 services:
     conditional_loader:
         class: Test\CustomBundle\Router\CustomRoutesLoader
-        arguments: [] # TODO Inject RouteResolverInterface
         tags:
             - { name: routing.loader }
