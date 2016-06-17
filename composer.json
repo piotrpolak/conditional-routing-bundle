@@ -19,8 +19,5 @@
             "name": "Piotr Polak",
             "email": "piotr@polak.ro"
         }
-    ],
-    "require-dev": {
-        "codeclimate/php-test-reporter": "^0.3.2"
-    }
+    ]
 }

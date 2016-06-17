@@ -11,6 +11,6 @@ php:
     - hhvm
 
 install:
-    - composer update --dev
+    - composer update
 
 script: phpunit -v
