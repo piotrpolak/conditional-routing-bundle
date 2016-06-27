@@ -15,7 +15,7 @@ use Symfony\Component\Routing\RouteCollection;
 class ConditionalRoutesLoader extends Loader
 {
     /** @var RouteResolverInterface[] */
-    private $routeResolvers = [];
+    private $routeResolvers = array();
 
     /** @var bool */
     private $isLoaded = false;
@@ -52,7 +52,7 @@ class ConditionalRoutesLoader extends Loader
      */
     public function getResolverKeys()
     {
-        $bundleNames = [];
+        $bundleNames = array();
         foreach ($this->routeResolvers as $routeResolver) {
             $resolverBundleNames = array_map(function (BundleRoutingDefinitionInterface $bundleRoutingDefinition) {
                 return $bundleRoutingDefinition->getBundleName();
