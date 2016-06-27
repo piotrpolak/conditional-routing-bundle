@@ -1,6 +1,6 @@
 <?php
 
-namespace  Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition;
+namespace Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition;
 
 interface BundleRoutingDefinitionInterface
 {

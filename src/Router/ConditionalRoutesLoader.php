@@ -54,8 +54,8 @@ class ConditionalRoutesLoader extends Loader
     {
         $bundleNames = array();
         foreach ($this->routeResolvers as $routeResolver) {
-            $resolverBundleNames = array_map(function (BundleRoutingDefinitionInterface $definition) {
-                return $definition->getBundleName();
+            $resolverBundleNames = array_map(function (BundleRoutingDefinitionInterface $bundleRoutingDefinition) {
+                return $bundleRoutingDefinition->getBundleName();
             }, $routeResolver->resolveConditionalRoutingDefinitions());
 
             $bundleNames = array_merge($bundleNames, $resolverBundleNames);
