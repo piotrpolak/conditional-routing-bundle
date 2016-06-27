@@ -54,8 +54,8 @@ class ConditionalRoutesLoader extends Loader
     {
         $bundleNames = array();
         foreach ($this->routeResolvers as $routeResolver) {
-            $resolverBundleNames = array_map(function (BundleRoutingDefinitionInterface $bundleRoutingDefinition) {
-                return $bundleRoutingDefinition->getBundleName();
+            $resolverBundleNames = array_map(function (BundleRoutingDefinitionInterface $definition) {
+                return $definition->getBundleName();
             }, $routeResolver->resolveConditionalRoutingDefinitions());
 
             $bundleNames = array_merge($bundleNames, $resolverBundleNames);
@@ -85,10 +85,10 @@ class ConditionalRoutesLoader extends Loader
         $collection = new RouteCollection();
 
         foreach ($this->routeResolvers as $routeResolver) {
-            $bundleRoutingDefinitions = $routeResolver->resolveConditionalRoutingDefinitions();
-            if (count($bundleRoutingDefinitions) > 0) {
-                foreach ($bundleRoutingDefinitions as $bundleRoutingDefinition) {
-                    $importedRoutes = $this->import($bundleRoutingDefinition->getResource(), $bundleRoutingDefinition->getType());
+            $definitions = $routeResolver->resolveConditionalRoutingDefinitions();
+            if (count($definitions) > 0) {
+                foreach ($definitions as $definition) {
+                    $importedRoutes = $this->import($definition->getResource(), $definition->getType());
 
                     $collection->addCollection($importedRoutes);
                 }

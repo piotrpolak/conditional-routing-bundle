@@ -19,9 +19,9 @@ class MethodHandlerCompilerPass implements CompilerPassInterface
 
         $definition = $container->findDefinition('conditional_loader');
 
-        $taggedServices = $container->findTaggedServiceIds('conditional_loader.route_resolver');
+        $taggedServicesIds = array_keys($container->findTaggedServiceIds('conditional_loader.route_resolver'));
 
-        foreach ($taggedServices as $id => $tags) {
+        foreach ($taggedServicesIds as $id) {
             $definition->addMethodCall('addMethodHandler', array(new Reference($id)));
         }
     }
