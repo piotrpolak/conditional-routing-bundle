@@ -19,14 +19,14 @@ $bundles = array(
 );
 ```
 
-### Include `@PiotrpolakConditionalRoutingBundle/Resources/config/routing.yml` in your routing, this will enable the custom route loader
+### Include routing to enable conditional route loader
 
 ```yaml
-// in app/config/routing.yml
+# in app/config/routing.yml
 conditional_routing:
     resource: "@PiotrpolakConditionalRoutingBundle/Resources/config/routing.yml"
     type:     yaml
-``
+```
 
 ## Known issues:
 
