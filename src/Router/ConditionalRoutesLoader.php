@@ -6,15 +6,15 @@ use Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Routing\RouteCollection;
 
+/**
+ * ConditionalRoutesLoader
+ * 
+ * @todo Implement warm-up
+ */
 class ConditionalRoutesLoader extends Loader
 {
     /** @var RouteResolverInterface[] */
     private $routeResolvers = [];
-
-    /** @var string */
-    private $type;
-
-    // TODO Implement warmup
 
     /**
      * @param RouteResolverInterface $resolver

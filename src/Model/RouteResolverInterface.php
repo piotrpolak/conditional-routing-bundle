@@ -2,6 +2,9 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Model;
 
+/**
+ * RouteResolverInterface should be implemented by the component who decides which bundles to be included in routing.
+ */
 interface RouteResolverInterface
 {
     /**
