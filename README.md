@@ -1,6 +1,6 @@
 # Symfony conditional-routing-bundle
 
-Provides a way to load selected budnles routes based on a specific user defined conditions.
+Provides a way to load selected Symfony bundle routes based on a set of user defined conditions.
 
 Solves a problem how to redirect Symfony application routes from base bundle to another bundle.
 
