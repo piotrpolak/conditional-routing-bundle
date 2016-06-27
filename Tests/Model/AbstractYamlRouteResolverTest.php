@@ -28,7 +28,7 @@ class AbstractYamlRouteResolverTest extends \PHPUnit_Framework_TestCase
 class YamlRouteResolverTestable extends AbstractYamlRouteResolver
 {
     /** @var array */
-    private $bundleNames = [];
+    private $bundleNames = array();
 
     /**
      * @param array $bundleNames
