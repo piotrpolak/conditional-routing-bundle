@@ -2,7 +2,7 @@
 
 Provides a way to load selected Symfony bundle routes based on a set of user defined conditions.
 
-Solves a problem how to redirect Symfony application routes from base bundle to another bundle.
+Solves a problem of how to redirect Symfony application routes from base bundle to another bundle.
 
 ## Example usages
 * Overwrite Symfony application routes for selected users
@@ -34,6 +34,45 @@ This will enable the `ConditionalRouterLoader`.
 conditional_routing:
     resource: "@PiotrpolakConditionalRoutingBundle/Resources/config/routing.yml"
     type:     yaml
+```
+
+### Implement your own RouteResolver
+
+The following example loads `MyCampaign2016Bundle` routing based on the year condition.
+Please note that `AbstractYamlRouteResolver` is just a helper that makes use of `RouteResolverInterface` easier.
+
+```php
+<?php
+
+namespace MyApp;
+
+use Piotrpolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
+
+class CampaignRouteResolver extends AbstractYamlRouteResolver
+{
+    /**
+     * @inheritdoc
+     */
+    public function resolveBundleNames()
+    {
+        $bundleNames = array();
+        if ((int)date('Y') > 2016) {
+            // Loads @MyCampaign2016Bundle/Resources/config/routing.yml
+            $bundleNames[] = 'MyCampaign2016Bundle';
+        }
+        return $bundleNames;
+    }
+}
+```
+
+```yaml
+# in services.yml
+services:
+    # ...
+    my_app.campaign_route_resolver:
+        class: MyApp\CampaignRouteResolver
+        tags:
+            - { name: conditional_loader.route_resolver }
 ```
 
 ## Known issues:
