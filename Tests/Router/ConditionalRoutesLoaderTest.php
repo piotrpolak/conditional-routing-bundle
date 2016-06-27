@@ -13,6 +13,17 @@ class ConditionalRoutesLoaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(0, $loader->load('test')->count());
     }
 
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testMultipleCallsException()
+    {
+        $loader = new ConditionalRoutesLoader();
+        $this->assertEquals('', $loader->getResolverKeys());
+        $this->assertEquals(0, $loader->load('test')->count());
+        $this->assertEquals(0, $loader->load('test')->count());
+    }
+
     public function testSupports()
     {
         $loader = new ConditionalRoutesLoader();

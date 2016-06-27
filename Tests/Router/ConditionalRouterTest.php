@@ -28,13 +28,13 @@ class ConditionalRouterTest extends \PHPUnit_Framework_TestCase
         $loader->expects($this->any())->method('getResolverKeys')->willReturn($suffix);
         $router = new ConditionalRouter($loader, '');
 
-        $this->assertEquals('ProjectUrlMatcher'.$suffix, $router->getOption('matcher_cache_class'));
-        $this->assertEquals('ProjectUrlGenerator'.$suffix, $router->getOption('generator_cache_class'));
+        $this->assertEquals('ProjectUrlMatcher' . $suffix, $router->getOption('matcher_cache_class'));
+        $this->assertEquals('ProjectUrlGenerator' . $suffix, $router->getOption('generator_cache_class'));
 
         $router->setOption('matcher_cache_class', 'XXXProjectUrlMatcher');
         $router->setOption('generator_cache_class', 'XXXProjectUrlGenerator');
 
-        $this->assertEquals('XXXProjectUrlMatcher'.$suffix, $router->getOption('matcher_cache_class'));
-        $this->assertEquals('XXXProjectUrlGenerator'.$suffix, $router->getOption('generator_cache_class'));
+        $this->assertEquals('XXXProjectUrlMatcher' . $suffix, $router->getOption('matcher_cache_class'));
+        $this->assertEquals('XXXProjectUrlGenerator' . $suffix, $router->getOption('generator_cache_class'));
     }
 }

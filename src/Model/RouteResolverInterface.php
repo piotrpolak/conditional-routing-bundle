@@ -2,16 +2,20 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Model;
 
+use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
+
 /**
  * RouteResolverInterface should be implemented by the component who decides which bundles to be included in routing.
  */
 interface RouteResolverInterface
 {
     /**
-     * This method should return an array of extra bundle names whose routing should be conditionally loaded.
+     * This method should return an array of extra BundleRoutingDefinitionInterface instances describing bundles
+     * whose routing should be conditionally loaded.
+     *
      * You should place your bundle-deciding logic here.
      *
-     * @return string[]
+     * @return BundleRoutingDefinitionInterface[]
      */
-    public function resolveBundleNames();
+    public function resolveConditionalRoutingDefinitions();
 }

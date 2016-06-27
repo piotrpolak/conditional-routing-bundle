@@ -1,16 +1,18 @@
 {
     "name": "piotrpolak/conditional-routing-bundle",
     "description": "Provides a way to selectively load Symfony bundle routes based on a set of user defined conditions.",
-    "type": "library",
+    "type": "symfony-bundle",
     "require": {
         "php": ">=5.3.0",
         "symfony/routing": "~2.3|~3.0",
         "symfony/dependency-injection": "~2.3|~3.0",
-        "symfony/config": "~2.3|~3.0"
+        "symfony/config": "~2.3|~3.0",
+        "symfony/http-kernel": "~2.3|~3.0"
     },
     "license": "MIT",
     "autoload": {
         "psr-4": {
+            "Piotrpolak\\ConditionalRoutingBundle\\Tests\\": "src/Tests/",
             "Piotrpolak\\ConditionalRoutingBundle\\": "src/"
         }
     },

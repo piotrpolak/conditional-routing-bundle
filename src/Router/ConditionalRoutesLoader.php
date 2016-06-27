@@ -2,19 +2,23 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Router;
 
+use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
 use Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Routing\RouteCollection;
 
 /**
  * ConditionalRoutesLoader
- * 
+ *
  * @todo Implement warm-up
  */
 class ConditionalRoutesLoader extends Loader
 {
     /** @var RouteResolverInterface[] */
     private $routeResolvers = [];
+
+    /** @var bool */
+    private $isLoaded = false;
 
     /**
      * @param RouteResolverInterface $resolver
@@ -50,7 +54,11 @@ class ConditionalRoutesLoader extends Loader
     {
         $bundleNames = [];
         foreach ($this->routeResolvers as $routeResolver) {
-            $bundleNames = array_merge($bundleNames, $this->routeResolver->resolveBundleNames());
+            $resolverBundleNames = array_map(function (BundleRoutingDefinitionInterface $bundleRoutingDefinition) {
+                return $bundleRoutingDefinition->getBundleName();
+            }, $routeResolver->resolveConditionalRoutingDefinitions());
+
+            $bundleNames = array_merge($bundleNames, $resolverBundleNames);
         }
 
         if (0 === count($bundleNames)) {
@@ -61,7 +69,7 @@ class ConditionalRoutesLoader extends Loader
         $bundleNames = array_unique($bundleNames);
         sort($bundleNames);
 
-        return '__'.implode('__', $bundleNames);
+        return '__' . implode('__', $bundleNames);
     }
 
     /**
@@ -69,18 +77,18 @@ class ConditionalRoutesLoader extends Loader
      */
     public function load($resource, $type = null)
     {
+        if (true === $this->isLoaded) {
+            throw new \RuntimeException('Do not add the "conditional" loader twice');
+        }
+        $this->isLoaded = true;
+
         $collection = new RouteCollection();
 
         foreach ($this->routeResolvers as $routeResolver) {
-            $bundleNames = $routeResolver->resolveBundleNames();
-            if (count($bundleNames) > 0) {
-                foreach ($bundleNames as $bundleName) {
-
-                    // TODO Make routing file configurable
-                    // TODO Make type configurable
-                    // TODO Check if bundle/resource exists
-                    $resource = '@'.$bundleName.'Resources/config/routing.yml';
-                    $importedRoutes = $this->import($resource, 'yaml');
+            $bundleRoutingDefinitions = $routeResolver->resolveConditionalRoutingDefinitions();
+            if (count($bundleRoutingDefinitions) > 0) {
+                foreach ($bundleRoutingDefinitions as $bundleRoutingDefinition) {
+                    $importedRoutes = $this->import($bundleRoutingDefinition->getResource(), $bundleRoutingDefinition->getType());
 
                     $collection->addCollection($importedRoutes);
                 }

@@ -13,7 +13,7 @@ class ConditionalRouter extends Router
     /**
      * @var array
      */
-    private $optionsToAppend = ['matcher_cache_class', 'generator_cache_class'];
+    private $optionsToAppend = array('matcher_cache_class', 'generator_cache_class');
 
     /**
      * @inheritdoc
