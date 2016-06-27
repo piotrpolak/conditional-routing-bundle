@@ -23,6 +23,7 @@
         }
     ],
     "require-dev": {
+        "symfony/expression-language": "~2.3|~3.0",
         "codeclimate/php-test-reporter": "^0.3.2"
     }
 }
