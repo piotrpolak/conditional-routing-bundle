@@ -13,4 +13,8 @@ php:
 install:
     - composer update
 
-script: phpunit -v
+script:
+    - phpunit -v
+
+after_script:
+     - ./vendor/bin/test-reporter
