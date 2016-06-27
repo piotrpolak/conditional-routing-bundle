@@ -8,8 +8,25 @@ Provides a way to selectively load Symfony bundle routes based on a set of user 
 
 ## Installation:
 
-* Enable `PiotrpolakConditionalRoutingBundle` in `AppKernel.php`
-* Include `conditional-routing-bundle/Resources/config/routing.yml` in your routing, this will enable the custom route loader
+### Enable `PiotrpolakConditionalRoutingBundle` in `AppKernel.php`
+
+```php
+// in AppKernel::registerBundles()
+$bundles = array(
+    // ...
+    new Piotrpolak\ConditionalRoutingBundle\PiotrpolakConditionalRoutingBundle(),
+    // ...
+);
+```
+
+### Include `@PiotrpolakConditionalRoutingBundle/Resources/config/routing.yml` in your routing, this will enable the custom route loader
+
+```yaml
+// in app/config/routing.yml
+conditional_routing:
+    resource: "@PiotrpolakConditionalRoutingBundle/Resources/config/routing.yml"
+    type:     yaml
+``
 
 ## Known issues:
 
