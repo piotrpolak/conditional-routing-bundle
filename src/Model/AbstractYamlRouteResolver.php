@@ -11,7 +11,7 @@ abstract class AbstractYamlRouteResolver implements RouteResolverInterface
      */
     public function resolveConditionalRoutingDefinitions()
     {
-        $definitions = [];
+        $definitions = array();
         $bundleNames = $this->resolveBundleNames();
         foreach ($bundleNames as $bundleName) {
             $definitions[] = new YamlBundleRoutingDefinition($bundleName);
