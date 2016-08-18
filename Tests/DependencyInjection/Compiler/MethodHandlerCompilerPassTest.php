@@ -14,13 +14,13 @@ class MethodHandlerCompilerPassTest extends \PHPUnit_Framework_TestCase
         $containerBuilder
             ->expects($this->once())
             ->method('has')
-            ->with('conditional_loader')
+            ->with('conditional_router.routing_loader')
             ->willReturn(true);
 
         $containerBuilder
             ->expects($this->once())
             ->method('findDefinition')
-            ->with('conditional_loader')
+            ->with('conditional_router.routing_loader')
             ->willReturn($definition);
 
         $containerBuilder
@@ -43,13 +43,13 @@ class MethodHandlerCompilerPassTest extends \PHPUnit_Framework_TestCase
         $containerBuilder
             ->expects($this->once())
             ->method('has')
-            ->with('conditional_loader')
+            ->with('conditional_router.routing_loader')
             ->willReturn(false);
 
         $containerBuilder
             ->expects($this->never())
             ->method('findDefinition')
-            ->with('conditional_loader')
+            ->with('conditional_router.routing_loader')
             ->willReturn($definition);
 
         $containerBuilder

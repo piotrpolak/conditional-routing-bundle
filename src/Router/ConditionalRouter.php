@@ -2,18 +2,35 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Router;
 
-use Symfony\Component\Routing\Router;
+use Symfony\Bundle\FrameworkBundle\Routing\Router as BaseRouter;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Routing\RequestContext;
 
 /**
- * Appends generator_cache_class to dynamically generate different cached matchers and generators casses
+ * Appends generator_cache_class to dynamically generate different cached matchers and generators classes
  * for each combination of included bundles.
  */
-class ConditionalRouter extends Router
+class ConditionalRouter extends BaseRouter
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     private $optionsToAppend = array('matcher_cache_class', 'generator_cache_class');
+
+    /** @var ContainerInterface */
+    private $c;
+
+    /**
+     * ConditionalRouter constructor.
+     * @param ContainerInterface $container
+     * @param mixed $resource
+     * @param array $options
+     * @param RequestContext|null $context
+     */
+    public function __construct(ContainerInterface $container, $resource, array $options = array(), RequestContext $context = null)
+    {
+        // $this->loader is null at any moment, that is why we have to check whether there is conditional_router.routing_loader in the container
+        $this->c = $container;
+        return parent::__construct($container, $resource, $options, $context);
+    }
 
     /**
      * @inheritdoc
@@ -22,8 +39,9 @@ class ConditionalRouter extends Router
     {
         parent::setOptions($options);
 
-        if ($this->loader instanceof ConditionalRoutesLoader) {
-            $resolverKeys = $this->loader->getResolverKeys();
+        // $this->loader is null at this moment so we have to use the definition directly
+        if ($this->c->has('conditional_router.routing_loader')) {
+            $resolverKeys = $this->c->get('conditional_router.routing_loader')->getResolverKeys();
 
             foreach ($this->optionsToAppend as $optionToAppend) {
                 $this->options[$optionToAppend] .= $resolverKeys;
@@ -36,9 +54,12 @@ class ConditionalRouter extends Router
      */
     public function setOption($key, $value)
     {
-        if ($this->loader instanceof ConditionalRoutesLoader) {
+        // $this->loader is null at this moment so we have to use the definition directly
+        if ($this->c->has('conditional_router.routing_loader')) {
+            $resolverKeys = $this->c->get('conditional_router.routing_loader')->getResolverKeys();
+
             if (in_array($key, $this->optionsToAppend)) {
-                $value .= $this->loader->getResolverKeys();
+                $value .= $resolverKeys;
             }
         }
 

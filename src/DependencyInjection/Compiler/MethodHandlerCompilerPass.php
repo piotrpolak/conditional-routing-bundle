@@ -13,16 +13,16 @@ class MethodHandlerCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->has('conditional_loader')) {
+        if (!$container->has('conditional_router.routing_loader')) {
             return;
         }
 
-        $definition = $container->findDefinition('conditional_loader');
+        $definition = $container->findDefinition('conditional_router.routing_loader');
 
         $taggedServicesIds = array_keys($container->findTaggedServiceIds('conditional_loader.route_resolver'));
 
         foreach ($taggedServicesIds as $id) {
-            $definition->addMethodCall('addMethodHandler', array(new Reference($id)));
+            $definition->addMethodCall('addRouteResolver', array(new Reference($id)));
         }
     }
 }
