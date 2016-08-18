@@ -38,7 +38,7 @@ conditional_routing:
 
 ### Implement your own RouteResolver
 
-The following example loads `MyCampaign2016Bundle` routing based on the year condition. **Note:** `MyCampaign2016Bundle` must fiest be enabled in `AppKernel.php`.
+The following example loads `MyCampaign2016Bundle` routing based on the year condition. **Note:** `MyCampaign2016Bundle` must first be enabled in `AppKernel.php`.
 
 *Please note that `AbstractYamlRouteResolver` is just a helper that makes use of `RouteResolverInterface` easier.*
 
