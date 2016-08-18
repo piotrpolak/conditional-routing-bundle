@@ -1,6 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler;
+namespace Piotrpolak\ConditionalRoutingBundle\Tests\DependencyInjection\Compiler;
+
+use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\MethodHandlerCompilerPass;
 
 class MethodHandlerCompilerPassTest extends \PHPUnit_Framework_TestCase
 {

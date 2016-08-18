@@ -4,27 +4,13 @@ namespace Piotrpolak\ConditionalRoutingBundle\Model;
 
 use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition;
 
-abstract class AbstractYamlRouteResolver implements RouteResolverInterface
+abstract class AbstractYamlRouteResolver extends AbstractRouteResolver
 {
     /**
      * @inheritdoc
      */
-    public function resolveConditionalRoutingDefinitions()
+    protected function getRoutingDefinitionForBundleName($bundleName)
     {
-        $definitions = array();
-        $bundleNames = $this->resolveBundleNames();
-        foreach ($bundleNames as $bundleName) {
-            $definitions[] = new YamlBundleRoutingDefinition($bundleName);
-        }
-
-        return $definitions;
+        return new YamlBundleRoutingDefinition($bundleName);
     }
-
-    /**
-     * This method should return an array of extra bundle names whose routing should be conditionally loaded.
-     * You should place your bundle-deciding logic here.
-     *
-     * @return string[]
-     */
-    public abstract function resolveBundleNames();
 }
