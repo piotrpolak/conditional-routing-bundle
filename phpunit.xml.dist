@@ -6,7 +6,7 @@
          verbose="true">
     <testsuites>
         <testsuite name="Conditional Routing Bundle Test Suite">
-            <directory suffix="Test.php">./Tests/</directory>
+            <directory suffix="Test.php">./src/Tests/</directory>
         </testsuite>
     </testsuites>
 
@@ -15,7 +15,7 @@
             <directory>./</directory>
             <exclude>
                 <directory>./Resources</directory>
-                <directory>./Tests</directory>
+                <directory>./src/Tests</directory>
                 <directory>./vendor</directory>
             </exclude>
         </whitelist>

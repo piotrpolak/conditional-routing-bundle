@@ -2,14 +2,15 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Tests\Model;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
+use Piotrpolak\ConditionalRoutingBundle\Model\AbstractRouteResolver;
+use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition;
 
-class AbstractYamlRouteResolverTest extends \PHPUnit_Framework_TestCase
+class AbstractRouteResolverTest extends \PHPUnit_Framework_TestCase
 {
     public function testDefault()
     {
         $bundleNames = array('SampleBundle', 'TestBundle');
-        $yamlRouteResolver = new YamlRouteResolverTestable();
+        $yamlRouteResolver = new AbstractRouteResolverTestable();
         $yamlRouteResolver->setBundleNames($bundleNames);
 
         $definitions = $yamlRouteResolver->resolveConditionalRoutingDefinitions();
@@ -17,7 +18,6 @@ class AbstractYamlRouteResolverTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(count($bundleNames), count($definitions));
 
         foreach ($definitions as $definition) {
-            $this->assertInstanceOf('\\Piotrpolak\\ConditionalRoutingBundle\\Model\\RoutingDefinition\\YamlBundleRoutingDefinition', $definition);
             $search = array_search($definition->getBundleName(), $bundleNames);
             $this->assertNotFalse($search);
             unset($bundleNames[$search]);
@@ -25,10 +25,19 @@ class AbstractYamlRouteResolverTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class YamlRouteResolverTestable extends AbstractYamlRouteResolver
+class AbstractRouteResolverTestable extends AbstractRouteResolver
 {
     /** @var array */
     private $bundleNames = array();
+
+    /**
+     * @inheritdoc
+     */
+    protected function getRoutingDefinitionForBundleName($bundleName)
+    {
+        // Just for testing, do not stick to the type!!!111
+        return new YamlBundleRoutingDefinition($bundleName);
+    }
 
     /**
      * @param array $bundleNames

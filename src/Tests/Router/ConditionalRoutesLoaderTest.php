@@ -82,14 +82,3 @@ class ConditionalRoutesLoaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(0, $loader->load('test')->count());
     }
 }
-
-class ConditionalRoutesLoaderTestable extends ConditionalRoutesLoader
-{
-    /**
-     * @inheritdoc
-     */
-    public function import($resource, $type = null)
-    {
-        return new \Symfony\Component\Routing\RouteCollection();
-    }
-}
