@@ -16,7 +16,7 @@ class ConditionalRouter extends BaseRouter
     private $optionsToAppend = array('matcher_cache_class', 'generator_cache_class');
 
     /** @var ContainerInterface */
-    private $c;
+    private $_container;
 
     /**
      * ConditionalRouter constructor.
@@ -28,7 +28,7 @@ class ConditionalRouter extends BaseRouter
     public function __construct(ContainerInterface $container, $resource, array $options = array(), RequestContext $context = null)
     {
         // $this->loader is null at any moment, that is why we have to check whether there is conditional_router.routing_loader in the container
-        $this->c = $container;
+        $this->_container = $container;
         return parent::__construct($container, $resource, $options, $context);
     }
 
@@ -40,8 +40,8 @@ class ConditionalRouter extends BaseRouter
         parent::setOptions($options);
 
         // $this->loader is null at this moment so we have to use the definition directly
-        if ($this->c->has('conditional_router.routing_loader')) {
-            $resolverKeys = $this->c->get('conditional_router.routing_loader')->getResolverKeys();
+        if ($this->_container->has('conditional_router.routing_loader')) {
+            $resolverKeys = $this->_container->get('conditional_router.routing_loader')->getResolverKeys();
 
             foreach ($this->optionsToAppend as $optionToAppend) {
                 $this->options[$optionToAppend] .= $resolverKeys;
@@ -55,8 +55,8 @@ class ConditionalRouter extends BaseRouter
     public function setOption($key, $value)
     {
         // $this->loader is null at this moment so we have to use the definition directly
-        if ($this->c->has('conditional_router.routing_loader')) {
-            $resolverKeys = $this->c->get('conditional_router.routing_loader')->getResolverKeys();
+        if ($this->_container->has('conditional_router.routing_loader')) {
+            $resolverKeys = $this->_container->get('conditional_router.routing_loader')->getResolverKeys();
 
             if (in_array($key, $this->optionsToAppend)) {
                 $value .= $resolverKeys;
