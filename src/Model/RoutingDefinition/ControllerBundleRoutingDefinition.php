@@ -15,7 +15,7 @@ class ControllerBundleRoutingDefinition extends AbstractBundleRoutingDefinition
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getResource()
     {

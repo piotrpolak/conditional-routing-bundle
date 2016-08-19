@@ -8,7 +8,6 @@ class PiotrpolakConditionalRoutingExtensionTest extends \PHPUnit_Framework_TestC
 {
     public function testDefault()
     {
-
         $containerBuilder = $this->getMockBuilder('\Symfony\Component\DependencyInjection\ContainerBuilder')
             ->disableOriginalConstructor()
             ->getMock();

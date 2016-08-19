@@ -12,7 +12,7 @@ use Symfony\Component\Routing\RequestContext;
  */
 class ConditionalRouter extends BaseRouter
 {
-    /** @var array */
+    /** @var string[] */
     private $optionsToAppend = array('matcher_cache_class', 'generator_cache_class');
 
     /** @var ContainerInterface */

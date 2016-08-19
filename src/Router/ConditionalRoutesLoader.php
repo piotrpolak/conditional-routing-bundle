@@ -7,11 +7,6 @@ use Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Routing\RouteCollection;
 
-/**
- * ConditionalRoutesLoader
- *
- * @todo Implement warm-up
- */
 class ConditionalRoutesLoader extends Loader
 {
     /** @var RouteResolverInterface[] */
@@ -21,6 +16,8 @@ class ConditionalRoutesLoader extends Loader
     private $isLoaded = false;
 
     /**
+     * Registers a new route resolver.
+     *
      * @param RouteResolverInterface $resolver
      */
     public function addRouteResolver(RouteResolverInterface $resolver)
@@ -29,6 +26,8 @@ class ConditionalRoutesLoader extends Loader
     }
 
     /**
+     * Returns all registered route resolvers.
+     *
      * @return \Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface[]
      */
     public function getRouteResolvers()
@@ -37,7 +36,9 @@ class ConditionalRoutesLoader extends Loader
     }
 
     /**
-     * @param $routeResolvers
+     * Sets route resolvers.
+     *
+     * @param \Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface[] $routeResolvers
      * @return $this
      */
     public function setRouteResolvers($routeResolvers)
@@ -48,6 +49,9 @@ class ConditionalRoutesLoader extends Loader
     }
 
     /**
+     * Returns the string representing the unique combination of the currently enabled bundles.
+     * It is used to generate different cache files when the combination changes.
+     *
      * @return string
      */
     public function getResolverKeys()

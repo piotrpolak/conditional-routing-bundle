@@ -15,7 +15,7 @@ class YamlBundleRoutingDefinition extends AbstractBundleRoutingDefinition
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getResource()
     {

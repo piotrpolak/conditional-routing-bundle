@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Reference;
 class MethodHandlerCompilerPass implements CompilerPassInterface
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function process(ContainerBuilder $container)
     {

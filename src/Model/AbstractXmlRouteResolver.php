@@ -7,7 +7,7 @@ use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\XmlBundleRouting
 abstract class AbstractXmlRouteResolver extends AbstractRouteResolver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function getRoutingDefinitionForBundleName($bundleName)
     {

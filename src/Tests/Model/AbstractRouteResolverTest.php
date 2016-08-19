@@ -27,11 +27,11 @@ class AbstractRouteResolverTest extends \PHPUnit_Framework_TestCase
 
 class AbstractRouteResolverTestable extends AbstractRouteResolver
 {
-    /** @var array */
+    /** @var string[] */
     private $bundleNames = array();
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function getRoutingDefinitionForBundleName($bundleName)
     {
@@ -40,7 +40,7 @@ class AbstractRouteResolverTestable extends AbstractRouteResolver
     }
 
     /**
-     * @param array $bundleNames
+     * @param string[] $bundleNames
      */
     public function setBundleNames($bundleNames)
     {
@@ -48,7 +48,7 @@ class AbstractRouteResolverTestable extends AbstractRouteResolver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function resolveBundleNames()
     {

@@ -15,7 +15,7 @@ class XmlBundleRoutingDefinition extends AbstractBundleRoutingDefinition
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getResource()
     {

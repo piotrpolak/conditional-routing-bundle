@@ -10,6 +10,7 @@ class AbstractXmlRouteResolverTest extends \PHPUnit_Framework_TestCase
     {
         $resolver = new AbstractXmlRouteResolverTestable();
         $definitions = $resolver->resolveConditionalRoutingDefinitions();
+
         $this->assertGreaterThan(0, count($definitions));
         foreach ($definitions as $definition) {
             $this->assertInstanceOf('\Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\XmlBundleRoutingDefinition', $definition);
@@ -20,7 +21,7 @@ class AbstractXmlRouteResolverTest extends \PHPUnit_Framework_TestCase
 class AbstractXmlRouteResolverTestable extends AbstractXmlRouteResolver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function resolveBundleNames()
     {

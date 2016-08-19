@@ -7,7 +7,7 @@ use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDef
 abstract class AbstractRouteResolver implements RouteResolverInterface
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function resolveConditionalRoutingDefinitions()
     {
@@ -21,7 +21,8 @@ abstract class AbstractRouteResolver implements RouteResolverInterface
     }
 
     /**
-     * Returns an instance of BundleRoutingDefinitionInterface for the given bundle name
+     * Returns an instance of BundleRoutingDefinitionInterface for the given bundle name.
+     *
      * @param $bundleName
      * @return BundleRoutingDefinitionInterface
      */

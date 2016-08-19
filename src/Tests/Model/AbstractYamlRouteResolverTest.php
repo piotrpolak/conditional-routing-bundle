@@ -10,6 +10,7 @@ class AbstractYamlRouteResolverTest extends \PHPUnit_Framework_TestCase
     {
         $resolver = new AbstractYamlRouteResolverTestable();
         $definitions = $resolver->resolveConditionalRoutingDefinitions();
+
         $this->assertGreaterThan(0, count($definitions));
         foreach ($definitions as $definition) {
             $this->assertInstanceOf('\Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition', $definition);
@@ -20,7 +21,7 @@ class AbstractYamlRouteResolverTest extends \PHPUnit_Framework_TestCase
 class AbstractYamlRouteResolverTestable extends AbstractYamlRouteResolver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function resolveBundleNames()
     {

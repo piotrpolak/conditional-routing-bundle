@@ -22,7 +22,7 @@ abstract class AbstractBundleRoutingDefinition implements BundleRoutingDefinitio
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getBundleName()
     {
@@ -30,7 +30,7 @@ abstract class AbstractBundleRoutingDefinition implements BundleRoutingDefinitio
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getType()
     {
