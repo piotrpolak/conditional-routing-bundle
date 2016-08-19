@@ -1,5 +1,9 @@
 # Symfony conditional-routing-bundle
 
+[![Build Status](https://travis-ci.org/piotrpolak/conditional-routing-bundle.svg)](https://travis-ci.org/piotrpolak/conditional-routing-bundle)
+[![Code Climate](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/badges/gpa.svg)](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle)
+[![Test Coverage](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/badges/coverage.svg)](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/coverage)
+
 Provides a way to load selected Symfony bundle routes based on a set of user defined conditions.
 
 Solves a problem of how to redirect Symfony application routes from base bundle to another bundle.
@@ -11,13 +15,9 @@ Solves a problem of how to redirect Symfony application routes from base bundle 
 * Overwrite Symfony application routes based session variable values;
 * Overwrite Symfony application routes based user role and HTTP domain.
 
-[![Build Status](https://travis-ci.org/piotrpolak/conditional-routing-bundle.svg)](https://travis-ci.org/piotrpolak/conditional-routing-bundle)
-[![Code Climate](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/badges/gpa.svg)](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle)
-[![Test Coverage](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/badges/coverage.svg)](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/coverage)
+## Installation
 
-## Installation:
-
-### Enable bundle in application kernel
+### Enable `PiotrpolakConditionalRoutingBundle` in the application kernel
 
 ```php
 // in AppKernel::registerBundles()
@@ -30,7 +30,7 @@ $bundles = array(
 
 ### Include bundle routing
 
-This will enable the `ConditionalRouterLoader`.
+Including `routing.yml` will enable the `ConditionalRouterLoader`.
 
 ```yaml
 # in app/config/routing.yml, without those lines ConditionalRouterLoader will not be enabled
@@ -39,9 +39,12 @@ conditional_routing:
     type:     yaml
 ```
 
-### Implement your own RouteResolver
+> Symfony will only load a resource loader if you use it for at least one route. You can alternatively paste the
+> contents of the above resource file directly in your `app/config/routing.yml`.
 
-Route Resolvers are the components that implement `RouteResolverInterface` and decide which bundles' routing is to be
+### Implement your own route resolver
+
+**Route resolvers** are the components that implement `RouteResolverInterface` and decide which bundles' routing is to be
 included at the request time.
 
 A typical Route Resolver component is registered in the container configuration under the
@@ -56,7 +59,7 @@ bundles can be picked using any user defined scenarios.
 The following example loads `MyCampaign2016Bundle` routing based on the year condition. **Note:** `MyCampaign2016Bundle`
 must first be enabled in `AppKernel.php`.
 
-*Please note that `AbstractYamlRouteResolver` is just a helper that makes use of `RouteResolverInterface` easier.*
+> Please note that `AbstractYamlRouteResolver` is just a helper that makes use of `RouteResolverInterface` easier.
 
 ```php
 <?php
@@ -160,6 +163,8 @@ services:
 
 ### Example - loading routing of various types
 
+RouteResolver from the following example implements directly the `RouteResolverInterface` and loads routing of both
+YAML and XML types.
 
 ```php
 <?php
@@ -226,6 +231,11 @@ services:
         tags:
             - { name: conditional_loader.route_resolver }
 ```
+
+## Compatibility
+
+* PHP 5.3+
+* Symfony 2.3+
 
 ## Known issues
 
