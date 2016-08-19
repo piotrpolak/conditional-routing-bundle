@@ -16,6 +16,6 @@ class PiotrpolakConditionalRoutingExtensionTest extends \PHPUnit_Framework_TestC
         $containerBuilder->expects($this->once())->method('addResource');
 
         $extension = new PiotrpolakConditionalRoutingExtension();
-        $extension->load([], $containerBuilder);
+        $extension->load(array(), $containerBuilder);
     }
 }
