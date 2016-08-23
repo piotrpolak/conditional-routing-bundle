@@ -243,6 +243,11 @@ services:
 * PHP 5.3+
 * Symfony 2.3+
 
+## Precautions
+
+If you are trying to generate a link to a route that is not currently active, Symfony will throw an error.
+To avoid situations like that please make sure all routes have their default behavior defined in one of you base bundles.
+
 ## Known issues
 
 Warming up the Symfony cache will nor remove the custom router matchers and generators as we are not able to predict the
