@@ -2,9 +2,9 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Tests\DependencyInjection\Compiler;
 
-use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\MethodHandlerCompilerPass;
+use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
 
-class MethodHandlerCompilerPassTest extends \PHPUnit_Framework_TestCase
+class RouteResolverCompilerPassTest extends \PHPUnit_Framework_TestCase
 {
     public function testDefault()
     {
@@ -31,7 +31,7 @@ class MethodHandlerCompilerPassTest extends \PHPUnit_Framework_TestCase
             ->with('conditional_loader.route_resolver')
             ->willReturn(array('idValue' => null));
 
-        $compilerPass = new MethodHandlerCompilerPass();
+        $compilerPass = new RouteResolverCompilerPass();
         $compilerPass->process($containerBuilder);
     }
 
@@ -60,7 +60,7 @@ class MethodHandlerCompilerPassTest extends \PHPUnit_Framework_TestCase
             ->with('conditional_loader.route_resolver')
             ->willReturn(array('idValue' => null));
 
-        $compilerPass = new MethodHandlerCompilerPass();
+        $compilerPass = new RouteResolverCompilerPass();
         $compilerPass->process($containerBuilder);
     }
 }

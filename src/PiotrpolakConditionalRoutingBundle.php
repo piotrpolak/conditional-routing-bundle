@@ -2,7 +2,7 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle;
 
-use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\MethodHandlerCompilerPass;
+use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -13,6 +13,6 @@ class PiotrpolakConditionalRoutingBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
-        $container->addCompilerPass(new MethodHandlerCompilerPass());
+        $container->addCompilerPass(new RouteResolverCompilerPass());
     }
 }

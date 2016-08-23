@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\Reference;
  *
  * @author Piotr Polak <piotr@polak.ro>
  */
-class MethodHandlerCompilerPass implements CompilerPassInterface
+class RouteResolverCompilerPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}
