@@ -56,10 +56,11 @@ class ConditionalRoutesLoader extends Loader
      */
     public function getResolverKeys()
     {
+        // Getting bundle names for all route resolvers
         $bundleNames = array();
         foreach ($this->routeResolvers as $routeResolver) {
-            $resolverBundleNames = array_map(function (BundleRoutingDefinitionInterface $bundleRoutingDefinition) {
-                return $bundleRoutingDefinition->getBundleName();
+            $resolverBundleNames = array_map(function (BundleRoutingDefinitionInterface $routingDefinition) {
+                return $routingDefinition->getBundleName();
             }, $routeResolver->resolveConditionalRoutingDefinitions());
 
             $bundleNames = array_merge($bundleNames, $resolverBundleNames);
@@ -69,6 +70,7 @@ class ConditionalRoutesLoader extends Loader
             return '';
         }
 
+        // Normalizing the array of bundle names so that they are always displayed in the same order
         $bundleNames = array_filter($bundleNames);
         $bundleNames = array_unique($bundleNames);
         sort($bundleNames);
@@ -77,7 +79,7 @@ class ConditionalRoutesLoader extends Loader
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function load($resource, $type = null)
     {
@@ -103,7 +105,7 @@ class ConditionalRoutesLoader extends Loader
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function supports($resource, $type = null)
     {
