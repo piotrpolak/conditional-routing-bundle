@@ -43,5 +43,5 @@
 /.idea/
 /nbproject/
 
-# Prevent composer lock from being commited to reusable bundles
+# Prevent composer lock from being committed to reusable bundles
 /composer.lock

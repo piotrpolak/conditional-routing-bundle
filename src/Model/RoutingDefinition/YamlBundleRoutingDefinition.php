@@ -2,6 +2,11 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition;
 
+/**
+ * Represents a routing block of YAML type.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
+ */
 class YamlBundleRoutingDefinition extends AbstractBundleRoutingDefinition
 {
     /**

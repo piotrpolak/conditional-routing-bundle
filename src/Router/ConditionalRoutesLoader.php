@@ -7,6 +7,11 @@ use Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Routing\RouteCollection;
 
+/**
+ * Dynamically loads routing for bundles selected by the registered route resolvers.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
+ */
 class ConditionalRoutesLoader extends Loader
 {
     /** @var RouteResolverInterface[] */
@@ -41,7 +46,7 @@ class ConditionalRoutesLoader extends Loader
      * @param \Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface[] $routeResolvers
      * @return $this
      */
-    public function setRouteResolvers($routeResolvers)
+    public function setRouteResolvers(array $routeResolvers)
     {
         $this->routeResolvers = $routeResolvers;
 

@@ -7,6 +7,11 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
+/**
+ * Loads services.yml definition.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
+ */
 class PiotrpolakConditionalRoutingExtension extends Extension
 {
     /**

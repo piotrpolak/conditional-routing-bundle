@@ -6,6 +6,11 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Reference;
 
+/**
+ * Adds tagged conditional_router.routing_loader service support.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
+ */
 class MethodHandlerCompilerPass implements CompilerPassInterface
 {
     /**
@@ -13,13 +18,15 @@ class MethodHandlerCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->has('conditional_router.routing_loader')) {
+        $key = 'conditional_router.routing_loader';
+
+        if (!$container->has($key)) {
             return;
         }
 
-        $definition = $container->findDefinition('conditional_router.routing_loader');
+        $definition = $container->findDefinition($key);
 
-        $taggedServicesIds = array_keys($container->findTaggedServiceIds('conditional_loader.route_resolver'));
+        $taggedServicesIds = array_keys($container->findTaggedServiceIds($key));
 
         foreach ($taggedServicesIds as $id) {
             $definition->addMethodCall('addRouteResolver', array(new Reference($id)));

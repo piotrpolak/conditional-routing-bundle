@@ -2,6 +2,11 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition;
 
+/**
+ * Represents a routing block of XML type.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
+ */
 class XmlBundleRoutingDefinition extends AbstractBundleRoutingDefinition
 {
     /**

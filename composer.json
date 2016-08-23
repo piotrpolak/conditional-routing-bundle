@@ -13,7 +13,6 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Piotrpolak\\ConditionalRoutingBundle\\Tests\\": "src/Tests/",
             "Piotrpolak\\ConditionalRoutingBundle\\": "src/"
         }
     },

@@ -2,6 +2,12 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition;
 
+/**
+ * AbstractBundleRoutingDefinition makes the usage of BundleRoutingDefinitionInterface easier.
+ * Any extending method should implement the resource resolving BundleRoutingDefinitionInterface::getResource() method.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
+ */
 abstract class AbstractBundleRoutingDefinition implements BundleRoutingDefinitionInterface
 {
     /** @var string */

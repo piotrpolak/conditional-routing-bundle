@@ -7,8 +7,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\RequestContext;
 
 /**
- * Appends generator_cache_class to dynamically generate different cached matchers and generators classes
+ * Appends generator_cache_class option in order to dynamically generate different cached matchers and generators
  * for each combination of included bundles.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
  */
 class ConditionalRouter extends BaseRouter
 {
@@ -20,6 +22,7 @@ class ConditionalRouter extends BaseRouter
 
     /**
      * ConditionalRouter constructor.
+     *
      * @param ContainerInterface $container
      * @param mixed $resource
      * @param array $options
@@ -33,7 +36,7 @@ class ConditionalRouter extends BaseRouter
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setOptions(array $options)
     {
@@ -50,7 +53,7 @@ class ConditionalRouter extends BaseRouter
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function setOption($key, $value)
     {

@@ -2,6 +2,11 @@
 
 namespace Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition;
 
+/**
+ * Represents a routing block having a bundle name, type and the resolved resource (path).
+ *
+ * @author Piotr Polak <piotr@polak.ro>
+ */
 interface BundleRoutingDefinitionInterface
 {
     /**

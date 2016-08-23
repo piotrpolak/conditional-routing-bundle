@@ -6,6 +6,8 @@ use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDef
 
 /**
  * RouteResolverInterface should be implemented by the component who decides which bundles to be included in routing.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
  */
 interface RouteResolverInterface
 {

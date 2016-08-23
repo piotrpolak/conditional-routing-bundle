@@ -4,6 +4,14 @@ namespace Piotrpolak\ConditionalRoutingBundle\Model;
 
 use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
 
+/**
+ * AbstractRouteResolver makes usage of RouteResolverInterface easier, any class extending AbstractRouteResolver must
+ * implement two of its abstract methods.
+ *
+ * The main logic should be placed in the resolveBundleNames() method.
+ *
+ * @author Piotr Polak <piotr@polak.ro>
+ */
 abstract class AbstractRouteResolver implements RouteResolverInterface
 {
     /**
