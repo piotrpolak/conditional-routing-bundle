@@ -17,6 +17,12 @@ Solves a problem of how to redirect Symfony application routes from base bundle 
 
 ## Installation
 
+### Install composer package
+
+```
+composer require piotrpolak/conditional-routing-bundle
+```
+
 ### Enable `PiotrpolakConditionalRoutingBundle` in the application kernel
 
 ```php
