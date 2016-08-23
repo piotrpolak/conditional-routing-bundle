@@ -6,7 +6,7 @@
 
 Provides a way to load selected Symfony bundle routes based on a set of user defined conditions.
 
-Solves a problem of how to redirect Symfony application routes from base bundle to another bundle.
+Solves the problem of redirecting (overwriting) Symfony application routes from a base bundle to another bundle.
 
 ## Example usages
 
@@ -45,19 +45,19 @@ conditional_routing:
     type:     yaml
 ```
 
-> Symfony will only load a resource loader if you use it for at least one route. You can alternatively paste the
+> Symfony will only load the resource loader if you use it for at least one route. You can alternatively paste the
 > contents of the above resource file directly in your `app/config/routing.yml`.
 
 ### Implement your own route resolver
 
-**Route resolvers** are the components that implement `RouteResolverInterface` and decide which bundles' routing is to be
+**Route resolvers** are components that implement `RouteResolverInterface` and decide which bundles' routing is to be
 included at the request time.
 
-A typical Route Resolver component is registered in the container configuration under the
-`conditional_loader.route_resolver` tag - you can register any number of Route Resolver components and all of them will
+A typical route resolver component is registered in the container configuration under the
+`conditional_loader.route_resolver` tag - you can register any number of route resolver components and all of them will
 be taken in account when selecting the combination of bundles to be included.
 
-Since you can pass any other component to the Route Resolver constructor (like `@session`, `@security.token_storage`...)
+Since you can pass any other component to the route resolver constructor (like `@session`, `@security.token_storage`...)
 bundles can be picked using any user defined scenarios.
 
 ### Example - date condition
@@ -77,7 +77,7 @@ use Piotrpolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
 class TimeCampaignRouteResolver extends AbstractYamlRouteResolver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function resolveBundleNames()
     {
@@ -132,7 +132,7 @@ class DatabaseCampaignRouteResolver extends AbstractYamlRouteResolver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function resolveBundleNames()
     {
@@ -202,7 +202,7 @@ class VariousTypesCampaignRouteResolver implements RouteResolverInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function resolveConditionalRoutingDefinitions()
     {
