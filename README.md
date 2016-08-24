@@ -12,8 +12,8 @@ Solves the problem of redirecting (overwriting) Symfony application routes from 
 
 * Overwrite Symfony application routes for selected users and/or roles;
 * Overwrite Symfony application routes based on the current time (e.g. switching monthly campaigns);
-* Overwrite Symfony application routes based session variable values;
-* Overwrite Symfony application routes based user role and HTTP domain.
+* Overwrite Symfony application routes based on session variable values;
+* Overwrite Symfony application routes based on user role and HTTP domain.
 
 ## Installation
 
@@ -50,8 +50,8 @@ conditional_routing:
 
 ### Implement your own route resolver
 
-**Route resolvers** are components that implement `RouteResolverInterface` and decide which bundles' routing is to be
-included at the request time.
+**Route resolvers** are the components that implement `RouteResolverInterface` and decide which bundles' routing is
+to be included at the request time.
 
 A typical route resolver component is registered in the container configuration under the
 `conditional_loader.route_resolver` tag - you can register any number of route resolver components and all of them will
@@ -169,7 +169,7 @@ services:
 
 ### Example - loading routing of various types
 
-RouteResolver from the following example implements directly the `RouteResolverInterface` and loads routing of both
+Route resolver from the following example implements directly the `RouteResolverInterface` and loads routing of both
 YAML and XML types.
 
 ```php
