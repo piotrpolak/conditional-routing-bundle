@@ -4,11 +4,11 @@
     "type": "symfony-bundle",
     "require": {
         "php": ">=5.3.0",
-        "symfony/routing": "~2.3|~3.1",
-        "symfony/dependency-injection": "~2.3|~3.1",
-        "symfony/config": "~2.3|~3.1",
-        "symfony/http-kernel": "~2.3|~3.1",
-        "symfony/framework-bundle": "~2.3|~3.1"
+        "symfony/routing": "~2.3|~3.2",
+        "symfony/dependency-injection": "~2.3|~3.2",
+        "symfony/config": "~2.3|~3.2",
+        "symfony/http-kernel": "~2.3|~3.2",
+        "symfony/framework-bundle": "~2.3|~3.2"
     },
     "license": "MIT",
     "autoload": {
