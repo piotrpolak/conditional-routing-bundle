@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/piotrpolak/conditional-routing-bundle.svg)](https://travis-ci.org/piotrpolak/conditional-routing-bundle)
 [![Code Climate](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/badges/gpa.svg)](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle)
 [![Test Coverage](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/badges/coverage.svg)](https://codeclimate.com/github/piotrpolak/conditional-routing-bundle/coverage)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/1bc7f87b-504f-4be0-a585-0cf5d0a43fec/mini.png)](https://insight.sensiolabs.com/projects/1bc7f87b-504f-4be0-a585-0cf5d0a43fec)
 
 Provides a way to load selected Symfony bundle routes based on a set of user defined conditions.
 
