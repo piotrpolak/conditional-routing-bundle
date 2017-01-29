@@ -3,6 +3,7 @@
 namespace Piotrpolak\ConditionalRoutingBundle\Tests\Router;
 
 use Piotrpolak\ConditionalRoutingBundle\Router\ConditionalRoutesLoader;
+use Symfony\Component\Routing\RouteCollection;
 
 class ConditionalRoutesLoaderTest extends \PHPUnit_Framework_TestCase
 {
@@ -90,6 +91,6 @@ class ConditionalRoutesLoaderTestable extends ConditionalRoutesLoader
      */
     public function import($resource, $type = null)
     {
-        return new \Symfony\Component\Routing\RouteCollection();
+        return new RouteCollection();
     }
 }
