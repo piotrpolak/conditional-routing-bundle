@@ -28,3 +28,4 @@ class AbstractYamlRouteResolverTestable extends AbstractYamlRouteResolver
         return array('MyTestBundle');
     }
 }
+

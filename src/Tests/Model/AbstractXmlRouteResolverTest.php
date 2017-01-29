@@ -28,3 +28,4 @@ class AbstractXmlRouteResolverTestable extends AbstractXmlRouteResolver
         return array('MyTestBundle');
     }
 }
+
