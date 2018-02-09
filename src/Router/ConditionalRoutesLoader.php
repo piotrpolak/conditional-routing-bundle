@@ -88,10 +88,7 @@ class ConditionalRoutesLoader extends Loader
      */
     public function load($resource, $type = null)
     {
-        if (true === $this->isLoaded) {
-            throw new \RuntimeException('Do not add the "conditional" loader twice');
-        }
-        $this->isLoaded = true;
+        $this->makeSureLoadedOnceOnly();
 
         $collection = new RouteCollection();
 
@@ -115,5 +112,13 @@ class ConditionalRoutesLoader extends Loader
     public function supports($resource, $type = null)
     {
         return 'conditional' === $type;
+    }
+
+    private function makeSureLoadedOnceOnly()
+    {
+        if (true === $this->isLoaded) {
+            throw new \RuntimeException('Do not add the "conditional" loader twice');
+        }
+        $this->isLoaded = true;
     }
 }
