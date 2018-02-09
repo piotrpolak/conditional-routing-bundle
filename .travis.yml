@@ -19,7 +19,7 @@ env:
     - SYMFONY_VERSION="3.2.*"
 
 matrix:
-     include:
+    include:
         - php: 5.3
           dist: precise
     exclude:
