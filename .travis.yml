@@ -37,7 +37,7 @@ matrix:
           env: SYMFONY_VERSION="3.2.*"
 
 install:
-    - composer require symfony/framework-bundle:${SYMFONY_VERSION}
+    - 'composer require symfony/framework-bundle:"${SYMFONY_VERSION}"'
 
 script:
     - phpunit -v
