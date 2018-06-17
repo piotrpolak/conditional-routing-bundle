@@ -11,9 +11,7 @@ class PiotrpolakConditionalRoutingExtensionTest extends \PHPUnit_Framework_TestC
         $containerBuilder = $this->getMockBuilder('\Symfony\Component\DependencyInjection\ContainerBuilder')
             ->disableOriginalConstructor()
             ->getMock();
-
-        $containerBuilder->expects($this->once())->method('addResource');
-
+        
         $extension = new PiotrpolakConditionalRoutingExtension();
         $extension->load(array(), $containerBuilder);
     }
