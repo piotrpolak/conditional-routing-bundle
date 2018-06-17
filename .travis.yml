@@ -42,7 +42,7 @@ install:
     - 'composer require symfony/framework-bundle:"${SYMFONY_VERSION}"'
 
 script:
-    - phpunit -v
+    - vendor/bin/phpunit -v
 
 after_script:
      - ./vendor/bin/test-reporter
