@@ -3,16 +3,13 @@
 namespace Piotrpolak\ConditionalRoutingBundle\Tests\DependencyInjection;
 
 use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\PiotrpolakConditionalRoutingExtension;
+use Piotrpolak\ConditionalRoutingBundle\Tests\BaseConditionalRoutingBundleTestCase;
 
-class PiotrpolakConditionalRoutingExtensionTest extends \PHPUnit_Framework_TestCase
+class PiotrpolakConditionalRoutingExtensionTest extends BaseConditionalRoutingBundleTestCase
 {
     public function testDefault()
     {
-        $containerBuilder = $this->getMockBuilder('\Symfony\Component\DependencyInjection\ContainerBuilder')
-            ->disableOriginalConstructor()
-            ->getMock();
-        
         $extension = new PiotrpolakConditionalRoutingExtension();
-        $extension->load(array(), $containerBuilder);
+        $extension->load(array(), $this->getContainerBuilderMock());
     }
 }

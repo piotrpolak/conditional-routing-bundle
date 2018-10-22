@@ -3,15 +3,19 @@
 namespace Piotrpolak\ConditionalRoutingBundle\Tests\DependencyInjection\Compiler;
 
 use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
+use Piotrpolak\ConditionalRoutingBundle\Tests\BaseConditionalRoutingBundleTestCase;
 
-class RouteResolverCompilerPassTest extends \PHPUnit_Framework_TestCase
+class RouteResolverCompilerPassTest extends BaseConditionalRoutingBundleTestCase
 {
     public function testDefault()
     {
-        $definition = $this->getMock('\Symfony\Component\DependencyInjection\Definition');
+        $definition = $this->getMockBuilder('\Symfony\Component\DependencyInjection\Definition')
+            ->setMethods(array ('addMethodCall'))
+            ->getMock();
+
         $definition->expects($this->once())->method('addMethodCall');
 
-        $containerBuilder = $this->getMock('\Symfony\Component\DependencyInjection\ContainerBuilder');
+        $containerBuilder = $this->getContainerBuilderMock();
 
         $containerBuilder
             ->expects($this->once())
@@ -40,7 +44,7 @@ class RouteResolverCompilerPassTest extends \PHPUnit_Framework_TestCase
         $definition = $this->getMock('\Symfony\Component\DependencyInjection\Definition');
         $definition->expects($this->never())->method('addMethodCall');
 
-        $containerBuilder = $this->getMock('\Symfony\Component\DependencyInjection\ContainerBuilder');
+        $containerBuilder = $this->getContainerBuilderMock();
 
         $containerBuilder
             ->expects($this->once())
