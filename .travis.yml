@@ -27,7 +27,7 @@ matrix:
           env: SYMFONY_VERSION="3.2.*"
 
 install:
-    - 'composer require symfony/framework-bundle:"${SYMFONY_VERSION}"'
+    - 'composer --prefer-dist require symfony/framework-bundle:"${SYMFONY_VERSION}"'
 
 script:
     - vendor/bin/phpunit -v

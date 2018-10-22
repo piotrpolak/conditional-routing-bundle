@@ -257,6 +257,17 @@ Code should be checked using phpmd before being commited:
 ./vendor/phpmd/phpmd/src/bin/phpmd src/ text codesize,controversial,design,unusedcode,naming,cleancode
 ```
 
+## Testing
+
+```bash
+composer install --prefer-dist && ./vendor/bin/phpunit -v
+```
+
+To test in an arbitrary version combination, please use (`sudo` might be required to connect to the Docker daemon):
+```bash
+SYMFONY_VERSION=3.4 PHP_VERSION=7.4 bin/test_in_docker.sh
+```
+
 ## Known issues
 
 Warming up the Symfony cache will nor remove the custom router matchers and generators as we are not able to predict the
