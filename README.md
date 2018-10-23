@@ -242,7 +242,7 @@ services:
 ## Compatibility
 
 * PHP 5.4+
-* Symfony 2.3+
+* Symfony 2.3-3.4
 
 ## Precautions
 
