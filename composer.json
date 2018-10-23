@@ -15,7 +15,10 @@
     "autoload": {
         "psr-4": {
             "Piotrpolak\\ConditionalRoutingBundle\\": "src/"
-        }
+        },
+        "exclude-from-classmap": [
+            "/src/Tests/"
+        ]
     },
     "authors": [
         {
