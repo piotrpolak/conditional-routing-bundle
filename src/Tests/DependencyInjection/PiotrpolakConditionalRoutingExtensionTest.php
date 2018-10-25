@@ -1,15 +1,15 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests\DependencyInjection;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests\DependencyInjection;
 
-use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\PiotrpolakConditionalRoutingExtension;
-use Piotrpolak\ConditionalRoutingBundle\Tests\BaseConditionalRoutingBundleTestCase;
+use PiotrPolak\ConditionalRoutingBundle\DependencyInjection\PiotrPolakConditionalRoutingExtension;
+use PiotrPolak\ConditionalRoutingBundle\Tests\BaseConditionalRoutingBundleTestCase;
 
-class PiotrpolakConditionalRoutingExtensionTest extends BaseConditionalRoutingBundleTestCase
+class PiotrPolakConditionalRoutingExtensionTest extends BaseConditionalRoutingBundleTestCase
 {
     public function testDefault()
     {
-        $extension = new PiotrpolakConditionalRoutingExtension();
+        $extension = new PiotrPolakConditionalRoutingExtension();
         $extension->load(array(), $this->getContainerBuilderMock());
     }
 }

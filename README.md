@@ -24,13 +24,13 @@ Solves the problem of redirecting (overwriting) Symfony application routes from 
 composer require piotrpolak/conditional-routing-bundle
 ```
 
-### Enable `PiotrpolakConditionalRoutingBundle` in the application kernel
+### Enable `PiotrPolakConditionalRoutingBundle` in the application kernel
 
 ```php
 // in AppKernel::registerBundles()
 $bundles = array(
     // ...
-    new Piotrpolak\ConditionalRoutingBundle\PiotrpolakConditionalRoutingBundle(),
+    new PiotrPolak\ConditionalRoutingBundle\PiotrPolakConditionalRoutingBundle(),
     // ...
 );
 ```
@@ -42,7 +42,7 @@ Including `routing.yml` will enable the `ConditionalRouterLoader`.
 ```yaml
 # in app/config/routing.yml, without those lines ConditionalRouterLoader will not be enabled
 conditional_routing:
-    resource: "@PiotrpolakConditionalRoutingBundle/Resources/config/routing.yml"
+    resource: "@PiotrPolakConditionalRoutingBundle/Resources/config/routing.yml"
     type:     yaml
 ```
 
@@ -73,7 +73,7 @@ must first be enabled in `AppKernel.php`.
 
 namespace MyApp\Router;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
+use PiotrPolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
 
 class TimeCampaignRouteResolver extends AbstractYamlRouteResolver
 {
@@ -116,7 +116,7 @@ Reading the current bundle name from the database.
 namespace MyApp\Router;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Piotrpolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
+use PiotrPolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
 
 class DatabaseCampaignRouteResolver extends AbstractYamlRouteResolver
 {
@@ -178,9 +178,9 @@ YAML and XML types.
 
 namespace MyApp\Router;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface;
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\XmlBundleRoutingDefinition;
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition;
+use PiotrPolak\ConditionalRoutingBundle\Model\RouteResolverInterface;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\XmlBundleRoutingDefinition;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Router;
+namespace PiotrPolak\ConditionalRoutingBundle\Router;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
-use Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
+use PiotrPolak\ConditionalRoutingBundle\Model\RouteResolverInterface;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Routing\RouteCollection;
 
@@ -33,7 +33,7 @@ class ConditionalRoutesLoader extends Loader
     /**
      * Returns all registered route resolvers.
      *
-     * @return \Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface[]
+     * @return \PiotrPolak\ConditionalRoutingBundle\Model\RouteResolverInterface[]
      */
     public function getRouteResolvers()
     {
@@ -43,7 +43,7 @@ class ConditionalRoutesLoader extends Loader
     /**
      * Sets route resolvers.
      *
-     * @param \Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface[] $routeResolvers
+     * @param \PiotrPolak\ConditionalRoutingBundle\Model\RouteResolverInterface[] $routeResolvers
      * @return $this
      */
     public function setRouteResolvers(array $routeResolvers)

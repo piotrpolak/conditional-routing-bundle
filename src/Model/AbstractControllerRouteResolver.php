@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Model;
+namespace PiotrPolak\ConditionalRoutingBundle\Model;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\ControllerBundleRoutingDefinition;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\ControllerBundleRoutingDefinition;
 
 /**
  * AbstractXmlRouteResolver provides a way to load routing of controller type easier.

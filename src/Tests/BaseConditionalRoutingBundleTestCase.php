@@ -1,6 +1,6 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests;
 
 abstract class BaseConditionalRoutingBundleTestCase extends \PHPUnit_Framework_TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests\Router;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests\Router;
 
-use Piotrpolak\ConditionalRoutingBundle\Router\ConditionalRoutesLoader;
+use PiotrPolak\ConditionalRoutingBundle\Router\ConditionalRoutesLoader;
 use Symfony\Component\Routing\RouteCollection;
 
 class ConditionalRoutesLoaderTest extends \PHPUnit_Framework_TestCase
@@ -34,12 +34,12 @@ class ConditionalRoutesLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function testOneBundle()
     {
-        $definition = $this->getMock('\Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface');
+        $definition = $this->getMock('\PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface');
         $definition->expects($this->any())->method('getBundleName')->willReturn('SampleBundle');
         $definition->expects($this->any())->method('getResource')->willReturn('@SampleBundle/Resources/config/routing.yml');
         $definition->expects($this->any())->method('getType')->willReturn('yaml');
 
-        $routeResolver = $this->getMock('\Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface');
+        $routeResolver = $this->getMock('\PiotrPolak\ConditionalRoutingBundle\Model\RouteResolverInterface');
         $routeResolver->expects($this->atLeastOnce())
             ->method('resolveConditionalRoutingDefinitions')
             ->willReturn(array($definition));
@@ -57,17 +57,17 @@ class ConditionalRoutesLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function testTwoBundles()
     {
-        $definition = $this->getMock('\Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface');
+        $definition = $this->getMock('\PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface');
         $definition->expects($this->any())->method('getBundleName')->willReturn('SampleBundle');
         $definition->expects($this->any())->method('getResource')->willReturn('@SampleBundle/Resources/config/routing.yml');
         $definition->expects($this->any())->method('getType')->willReturn('yaml');
 
-        $definition2 = $this->getMock('\Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface');
+        $definition2 = $this->getMock('\PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface');
         $definition2->expects($this->any())->method('getBundleName')->willReturn('AAASecondSampleBundle');
         $definition2->expects($this->any())->method('getResource')->willReturn('@SampleBundle/Resources/config/routing.yml');
         $definition2->expects($this->any())->method('getType')->willReturn('yaml');
 
-        $routeResolver = $this->getMock('\Piotrpolak\ConditionalRoutingBundle\Model\RouteResolverInterface');
+        $routeResolver = $this->getMock('\PiotrPolak\ConditionalRoutingBundle\Model\RouteResolverInterface');
         $routeResolver->expects($this->atLeastOnce())
             ->method('resolveConditionalRoutingDefinitions')
             ->willReturn(array($definition, $definition2));

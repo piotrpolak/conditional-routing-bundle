@@ -1,12 +1,12 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle;
+namespace PiotrPolak\ConditionalRoutingBundle;
 
-use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
+use PiotrPolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PiotrpolakConditionalRoutingBundle extends Bundle
+class PiotrPolakConditionalRoutingBundle extends Bundle
 {
     /**
      * {@inheritdoc}

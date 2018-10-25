@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Model;
+namespace PiotrPolak\ConditionalRoutingBundle\Model;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
 
 /**
  * RouteResolverInterface should be implemented by the component who decides which bundles to be included in routing.

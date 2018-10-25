@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests\Model;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests\Model;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\AbstractXmlRouteResolver;
+use PiotrPolak\ConditionalRoutingBundle\Model\AbstractXmlRouteResolver;
 
 class AbstractXmlRouteResolverTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,7 +13,7 @@ class AbstractXmlRouteResolverTest extends \PHPUnit_Framework_TestCase
 
         $this->assertGreaterThan(0, count($definitions));
         foreach ($definitions as $definition) {
-            $this->assertInstanceOf('\Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\XmlBundleRoutingDefinition', $definition);
+            $this->assertInstanceOf('\PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\XmlBundleRoutingDefinition', $definition);
         }
     }
 }

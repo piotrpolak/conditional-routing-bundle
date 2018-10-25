@@ -1,6 +1,6 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Router;
+namespace PiotrPolak\ConditionalRoutingBundle\Router;
 
 use Symfony\Bundle\FrameworkBundle\Routing\Router as BaseRouter;
 use Symfony\Component\DependencyInjection\ContainerInterface;

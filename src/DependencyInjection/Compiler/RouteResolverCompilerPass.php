@@ -1,6 +1,6 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler;
+namespace PiotrPolak\ConditionalRoutingBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests\Model;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests\Model;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\AbstractRouteResolver;
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition;
+use PiotrPolak\ConditionalRoutingBundle\Model\AbstractRouteResolver;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition;
 
 class AbstractRouteResolverTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\DependencyInjection;
+namespace PiotrPolak\ConditionalRoutingBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @author Piotr Polak <piotr@polak.ro>
  */
-class PiotrpolakConditionalRoutingExtension extends Extension
+class PiotrPolakConditionalRoutingExtension extends Extension
 {
     /**
      * {@inheritdoc}

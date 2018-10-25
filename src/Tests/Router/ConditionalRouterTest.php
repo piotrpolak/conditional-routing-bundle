@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests\Router;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests\Router;
 
-use Piotrpolak\ConditionalRoutingBundle\Router\ConditionalRouter;
+use PiotrPolak\ConditionalRoutingBundle\Router\ConditionalRouter;
 
 class ConditionalRouterTest extends \PHPUnit_Framework_TestCase
 {
@@ -25,7 +25,7 @@ class ConditionalRouterTest extends \PHPUnit_Framework_TestCase
     public function testOptionsOverwrite()
     {
         $suffix = '__NamespaceConditionalSampleBundle';
-        $loader = $this->getMock('\Piotrpolak\ConditionalRoutingBundle\Router\ConditionalRoutesLoader');
+        $loader = $this->getMock('\PiotrPolak\ConditionalRoutingBundle\Router\ConditionalRoutesLoader');
         $loader->expects($this->any())->method('getResolverKeys')->willReturn($suffix);
         $containerInterface = $this->getMock('\Symfony\Component\DependencyInjection\ContainerInterface');
         $containerInterface->expects($this->any())->method('has')->with('conditional_router.routing_loader')->willReturn(true);

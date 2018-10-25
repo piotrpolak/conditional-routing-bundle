@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests\Model;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests\Model;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
+use PiotrPolak\ConditionalRoutingBundle\Model\AbstractYamlRouteResolver;
 
 class AbstractYamlRouteResolverTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,7 +13,7 @@ class AbstractYamlRouteResolverTest extends \PHPUnit_Framework_TestCase
 
         $this->assertGreaterThan(0, count($definitions));
         foreach ($definitions as $definition) {
-            $this->assertInstanceOf('\Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition', $definition);
+            $this->assertInstanceOf('\PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition', $definition);
         }
     }
 }

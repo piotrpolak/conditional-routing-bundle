@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Model;
+namespace PiotrPolak\ConditionalRoutingBundle\Model;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\YamlBundleRoutingDefinition;
 
 /**
  * AbstractXmlRouteResolver provides a way to load routing of YAML type easier.

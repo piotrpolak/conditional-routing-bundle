@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Model;
+namespace PiotrPolak\ConditionalRoutingBundle\Model;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\BundleRoutingDefinitionInterface;
 
 /**
  * AbstractRouteResolver makes usage of RouteResolverInterface easier, any class extending AbstractRouteResolver must

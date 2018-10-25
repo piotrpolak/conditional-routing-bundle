@@ -1,8 +1,8 @@
 parameters:
-    router.class: Piotrpolak\ConditionalRoutingBundle\Router\ConditionalRouter
+    router.class: PiotrPolak\ConditionalRoutingBundle\Router\ConditionalRouter
 
 services:
     conditional_router.routing_loader:
-        class: Piotrpolak\ConditionalRoutingBundle\Router\ConditionalRoutesLoader
+        class: PiotrPolak\ConditionalRoutingBundle\Router\ConditionalRoutesLoader
         tags:
             - { name: routing.loader }

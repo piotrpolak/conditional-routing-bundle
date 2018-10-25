@@ -1,6 +1,6 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition;
+namespace PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition;
 
 /**
  * Represents a routing block of YAML type.

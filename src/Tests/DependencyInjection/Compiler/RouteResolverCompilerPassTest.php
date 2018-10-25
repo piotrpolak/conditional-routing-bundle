@@ -1,9 +1,9 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests\DependencyInjection\Compiler;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests\DependencyInjection\Compiler;
 
-use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
-use Piotrpolak\ConditionalRoutingBundle\Tests\BaseConditionalRoutingBundleTestCase;
+use PiotrPolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
+use PiotrPolak\ConditionalRoutingBundle\Tests\BaseConditionalRoutingBundleTestCase;
 
 class RouteResolverCompilerPassTest extends BaseConditionalRoutingBundleTestCase
 {

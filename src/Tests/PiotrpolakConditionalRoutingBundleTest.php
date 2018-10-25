@@ -1,18 +1,18 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests;
 
-use Piotrpolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
-use Piotrpolak\ConditionalRoutingBundle\PiotrpolakConditionalRoutingBundle;
+use PiotrPolak\ConditionalRoutingBundle\DependencyInjection\Compiler\RouteResolverCompilerPass;
+use PiotrPolak\ConditionalRoutingBundle\PiotrPolakConditionalRoutingBundle;
 
-class PiotrpolakConditionalRoutingBundleTest extends BaseConditionalRoutingBundleTestCase
+class PiotrPolakConditionalRoutingBundleTest extends BaseConditionalRoutingBundleTestCase
 {
     public function testDefault()
     {
         $containerBuilder = $this->getContainerBuilderMock();
         $containerBuilder->expects($this->once())->method('addCompilerPass')->with(new RouteResolverCompilerPass());
 
-        $bundle = new PiotrpolakConditionalRoutingBundle();
+        $bundle = new PiotrPolakConditionalRoutingBundle();
         $bundle->build($containerBuilder);
     }
 }

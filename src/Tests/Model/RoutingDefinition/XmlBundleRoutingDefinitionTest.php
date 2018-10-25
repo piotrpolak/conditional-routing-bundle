@@ -1,8 +1,8 @@
 <?php
 
-namespace Piotrpolak\ConditionalRoutingBundle\Tests\Model\RoutingDefinition;
+namespace PiotrPolak\ConditionalRoutingBundle\Tests\Model\RoutingDefinition;
 
-use Piotrpolak\ConditionalRoutingBundle\Model\RoutingDefinition\XmlBundleRoutingDefinition;
+use PiotrPolak\ConditionalRoutingBundle\Model\RoutingDefinition\XmlBundleRoutingDefinition;
 
 class XmlBundleRoutingDefinitionTest extends \PHPUnit_Framework_TestCase
 {
